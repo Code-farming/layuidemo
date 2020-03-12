@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lhb.layuidemo.mapper.UserMapper">
+    <insert id="insertOneUser">
+        insert into user(id,username, password, name) values (#{id},#{username},#{password},#{name})
+    </insert>
+
+    <update id="updateUser">
+        update user set username=#{username},password=#{password},name=#{name} where id=#{id}
+    </update>
+
+    <delete id="deleteById">
+        delete from user where id=#{id}
+    </delete>
+
+    <select id="selectAllUser" resultType="com.lhb.layuidemo.model.User">
+        select * from user
+    </select>
+
+    <select id="selectOneUser" resultType="com.lhb.layuidemo.model.User">
+        select * from  user where id=#{id}
+    </select>
+
+</mapper>
